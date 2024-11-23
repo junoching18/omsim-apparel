@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omsim Apparel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #007f89;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd1f?fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            border-bottom: 5px solid #ffdd57;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            margin: 20px;
+        }
+        .hero h2 {
+            font-size: 3.5em;
+            margin: 0.5em 0;
+            text-shadow: 2px 2px 4px #000;
+        }
+        .hero p {
+            font-size: 1.5em;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px #000;
+            margin: 0.5em 0;
+        }
+        .shop-now {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #ffdd57, #ffbb33);
+            padding: 12px 24px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .shop-now:hover {
+            transform: translateY(-3px);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #007f89;
+            padding: 1em 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffdd57;
+        }
+        .container {
+            padding: 40px 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .product:hover img {
+            transform: scale(1.1);
+        }
+        .product h3 {
+            font-size: 1.3em;
+            margin: 12px 0;
+            color: #333;
+            font-weight: 500;
+        }
+        footer {
+            background-color: #007f89;
+            color: #fff;
+            text-align: center;
+            padding: 2em 1em;
+            margin-top: 20px;
+            font-weight: 300;
+        }
+        .social-icons {
+            margin: 1em 0;
+            font-size: 1.8em;
+        }
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #ffdd57;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Omsim Apparel</h1>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to Omsim Apparel</h2>
+        <p>Discover the latest trends in fashion!</p>
+        <a href="#tops-and-other-clothes" class="shop-now">
+            Shop Now <i class="fas fa-shopping-cart"></i>
+        </a>
+    </section>
+
+    <nav>
+        <a href="#tops-and-other-clothes" aria-label="Go to Tops section">Tops</a>
+        <a href="#bottoms" aria-label="Go to Bottoms Section">Bottoms</a>
+        <a href="#contact" aria-label="Go to Contact Us section">Contact Us</a>
+    </nav>
+
+    <section class="container" id="tops-and-other-clothes">
+        <h2>Tops</h2>
+        <div class="grid">
+            <div class="product" onclick="showProductDetails('Classic T-Shirt', '750₱', 'A comfortable, timeless t-shirt crafted for easy, everyday wear. Designed with a classic fit and soft fabric, its perfect for casual outings or relaxed days at home.')">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/81eQYorUrzL._UL1500_.jpg" alt="Classic T-shirt">
+                <h3>Classic T-Shirt</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('Graphic Tee', '750₱', 'A stylish graphic tee that combines comfort with bold design, perfect for adding personality to any casual outfit. Make a statement effortlessly with this standout piece.')">
+                <img src="https://i.pinimg.com/originals/33/1d/26/331d264c634519142406a1cc7c9b6dc4.png" alt="Graphic Tee">
+                <h3>Graphic Tee</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('Sunset Vintage Hoodie', '800₱', 'A cozy hoodie inspired by classic style, offering both warmth and a touch of retro charm. Perfect for laid-back days or layering up with timeless flair.')">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.2Ogbt4mIKd2lxYRC102YZAHaFD&pid=Api&P=0&h=220" alt="Sunset Vintage Hoodie">
+                <h3>Sunset Vintage Hoodie</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('Denim Jacket', '600₱', 'A classic denim jacket designed for year-round wear, effortlessly blending durability and style. This versatile piece is perfect for layering and elevating any casual look in every season.')">
+                <img src="http://s7d9.scene7.com/is/image/LWT/3PM/6281_BROW_Main_Front.jpg" alt="Denim Jacket">
+                <h3>Denim Jacket</h3>  
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="bottoms">
+        <h2>Bottoms</h2>
+        <div class="grid">
+            <div class="product" onclick="showProductDetails('Joggers', '700₱', 'Comfortable joggers perfect for casual wear or workouts, featuring an adjustable waistband and a sleek fit that allows for freedom of movement.')">
+                <img src="https://www.daiber.de/files/jn036-mens-jogging-pants-black-men.38072_master.jpg">
+                <h3>Joggers</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('Slim Fit Jeans', '900₱', 'Stylish and modern slim-fit jeans that complement any outfit.')">
+                <img src="https://ae01.alicdn.com/kf/HTB1g6eFbjLuK1Rjy0Fhq6xpdFXaB/2019-Mens-Skinny-Jeans-Black-Distressed-Denim-Stretch-Jeans-Men-Hombre-Slim-Fit-Fashion-Elastic-Waist.jpg" alt="Slim Fit Jeans">
+                <h3>Slim Fit Jeans</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('Chino Pants', '850₱', 'Versatile chino pants suitable for casual and formal occasions.')">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.kTQYWab-JUtimKnASATsqwHaHa&pid=Api&P=0&h=220" alt="Chino Pants">
+                <h3>Chino Pants</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('Cargo Pants', '700₱', 'Functional cargo pants with multiple pockets for convenience.')">
+                <img src="https://i5.walmartimages.com/asr/5ffc6ffa-b03d-4b32-b666-72fe4df248d8_1.d5de35f51ef610f4405bea4933bbb98e.jpeg" alt="Cargo Pants">
+                <h3>Cargo Pants</h3>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Omsim Apparel. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-product-name"></h2>
+            <p id="modal-product-price"></p>
+            <p id="modal-product-description"></p>
+        </div>
+    </div>
+
+    <script>
+        function showProductDetails(name, price, description) {
+            document.getElementById('modal-product-name').innerText = name;
+            document.getElementById('modal-product-price').innerText = price;
+            document.getElementById('modal-product-description').innerText = description;
+            document.getElementById('product-modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('product-modal')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
